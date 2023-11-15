@@ -7,7 +7,7 @@ const minusBtn = document.getElementById('minus')
 let action = '+'
 
 plusBtn.onclick = function () {
-    action = '+_)('
+    action = '+'
 }
 
 minusBtn.onclick = function () {
