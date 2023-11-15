@@ -10,7 +10,7 @@ const notes = [
     },
     {
         title: 'task 2',
-        completed: true,
+        completed: false,
     },
 ]
 
