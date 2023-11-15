@@ -14,7 +14,6 @@ const notes = [
     },
 ]
 
-
 // function render () {
 //     for (let note of notes) {
 //         listElement.insertAdjacentHTML('beforeend', getNoteTemplate(note))
