@@ -1,37 +1,93 @@
 // const inputElement = document.getElementById('title')
-// const submitBtn = document.getElementById('create')
+// const createBtn = document.getElementById('create')
 // const listElement = document.getElementById('list')
 //
-// const notes = ['task 1', 'task 2', 'task 3']
+//
+// const notes = [
+//     {
+//         title: 'task 1',
+//         isDone: true,
+//     },
+//
+//     {
+//         title: 'task 2',
+//         isDone: false,
+//     },
+//
+//     {
+//         title: 'task 2',
+//         isDone: false,
+//     },
+// ]
 //
 //
-// function render () {
-//     for (let note of notes) {
-//         listElement.insertAdjacentHTML('beforeend', getTemplateNotes(note))
+// function render() {
+//     listElement.innerHTML = ''
+//
+//     if (notes.length === 0) {
+//         listElement.innerHTML = '<p>Начните создавать свои заметки!</p>'
+//     }
+//
+//     for (let i = 0; i < notes.length; i++) {
+//         listElement.insertAdjacentHTML('beforeend', getNotesTemplate(notes[i], i))
 //     }
 // }
-//
 // render()
 //
 //
-// submitBtn.onclick = function () {
+// listElement.onclick = function (event) {
+//     if (event.target.dataset.index) {
+//         const index = parseInt(event.target.dataset.index)
+//         const type = event.target.dataset.type
+//
+//         if (type === 'toggle') {
+//             notes[index].isDone = !notes[index].isDone
+//         } else if (type === 'remove') {
+//             notes.splice(index, 1)
+//         }
+//     }
+//     render()
+// }
+//
+//
+// createBtn.onclick = function () {
 //     if (inputElement.value.length === 0) {
 //         return
 //     }
 //
-//     listElement.insertAdjacentHTML('beforeend', getTemplateNotes(inputElement.value))
+//     const newNote = {
+//         title: inputElement.value,
+//         isDone: false,
+//     }
+//
+//     notes.push(newNote)
+//     listElement.insertAdjacentHTML('beforeend', getNotesTemplate(newNote))
 //     inputElement.value = ''
 // }
 //
 //
-// function getTemplateNotes (title) {
-//     return `<li
+// function getNotesTemplate(note, index) {
+//     return `
+//             <li
 //           class="list-group-item d-flex justify-content-between align-items-center"
 //         >
-//           <span>${title}</span>
+//           <span class="${note.isDone ? 'text-decoration-line-through' : ''}">${note.title}</span>
 //           <span>
-//             <span class="btn btn-small btn-success">&check;</span>
-//             <span class="btn btn-small btn-danger">&times;</span>
+//             <span
+//             class="btn btn-small btn-${note.isDone ? 'warning' : 'success'}"
+//             data-index = '${index}'
+//             data-type = 'toggle'
+//             >
+//             &check;
+//             </span>
+//             <span
+//             class="btn btn-small btn-danger"
+//             data-index = '${index}'
+//             data-type = 'remove'
+//             >
+//             &times;
+//             </span>
 //           </span>
-//         </li>`
+//         </li>
+//     `
 // }
