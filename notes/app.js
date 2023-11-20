@@ -29,4 +29,4 @@
 // const arrow3 = name => console.log(name)
 //
 // arrow3('Nik_3')
-
+//
