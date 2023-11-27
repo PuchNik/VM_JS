@@ -5,9 +5,23 @@ const timeBtn = document.getElementById('time')
 let mode = 'time'
 
 
-setInterval(() => {
+function bindMode (name) {
+    return function () {
+        mode = name
+        update()
+    }
+}
+
+timeBtn.onclick = bindMode('time')
+timeBtn.onclick = bindMode('date')
+timeBtn.onclick = bindMode('full')
+
+setInterval (update, 1000)
+update()
+
+function update () {
     output.textContent = format(mode)
-})
+}
 
 
 function format(formatMode) {
@@ -19,5 +33,7 @@ function format(formatMode) {
             return now.toLocaleDateString()
         case 'full':
             return `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`
+        default:
+            return now.toLocaleTimeString()
     }
 }
