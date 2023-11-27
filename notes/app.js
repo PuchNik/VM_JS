@@ -50,6 +50,15 @@
 // console.log(names)
 // console.log(capitalNames)
 
+const nums = [0, 1, 2, 3]
+
+const transformed = nums.map(function (num, index, arr) {
+    return num, index, arr
+})
+// !!! 03:10:53
+
+console.log(transformed)
+
 // 6)
 
 // const people = [
@@ -93,5 +102,14 @@ const list = [
         title: 'forEach()',
         id: 5,
     },
+    {
+        title: 'with()',
+        id: 5,
+    },
+    {
+        title: 'Оператор Rest "..."',
+        id: 5,
+    },
 ]
 
+// 1)
