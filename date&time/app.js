@@ -13,8 +13,8 @@ function bindMode (name) {
 }
 
 timeBtn.onclick = bindMode('time')
-timeBtn.onclick = bindMode('date')
-timeBtn.onclick = bindMode('full')
+dateBtn.onclick = bindMode('date')
+fullBtn.onclick = bindMode('full')
 
 setInterval (update, 1000)
 update()
