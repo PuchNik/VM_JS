@@ -104,11 +104,19 @@ const list = [
     },
     {
         title: 'with()',
-        id: 5,
+        id: 6,
     },
     {
         title: 'Оператор Rest "..."',
-        id: 5,
+        id: 7,
+    },
+    {
+        title: 'bind()',
+        id: 8,
+    },
+    {
+        title: 'bound()',
+        id: 9,
     },
 ]
 
